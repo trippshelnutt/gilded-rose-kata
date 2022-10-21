@@ -4,9 +4,9 @@ namespace GildedRose
 {
     public class Program
     {
-        private const string BackstagePasses = "Backstage passes to a TAFKAL80ETC concert";
-        private const string AgedBrie = "Aged Brie";
-        private const string Sulfuras = "Sulfuras, Hand of Ragnaros";
+        private const string BackstagePassesName = "Backstage passes to a TAFKAL80ETC concert";
+        private const string AgedBrieName = "Aged Brie";
+        private const string SulfurasName = "Sulfuras, Hand of Ragnaros";
 
         public IList<Item> Items { get; set; }
 
@@ -14,11 +14,11 @@ namespace GildedRose
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                if (Items[i].Name != AgedBrie && Items[i].Name != BackstagePasses)
+                if (Items[i].Name != AgedBrieName && Items[i].Name != BackstagePassesName)
                 {
                     if (Items[i].Quality > 0)
                     {
-                        if (Items[i].Name != Sulfuras)
+                        if (Items[i].Name != SulfurasName)
                         {
                             Items[i].Quality = Items[i].Quality - 1;
                         }
@@ -30,7 +30,7 @@ namespace GildedRose
                     {
                         Items[i].Quality = Items[i].Quality + 1;
 
-                        if (Items[i].Name == BackstagePasses)
+                        if (Items[i].Name == BackstagePassesName)
                         {
                             if (Items[i].SellIn < 11)
                             {
@@ -51,20 +51,20 @@ namespace GildedRose
                     }
                 }
 
-                if (Items[i].Name != Sulfuras)
+                if (Items[i].Name != SulfurasName)
                 {
                     Items[i].SellIn = Items[i].SellIn - 1;
                 }
 
                 if (Items[i].SellIn < 0)
                 {
-                    if (Items[i].Name != AgedBrie)
+                    if (Items[i].Name != AgedBrieName)
                     {
-                        if (Items[i].Name != BackstagePasses)
+                        if (Items[i].Name != BackstagePassesName)
                         {
                             if (Items[i].Quality > 0)
                             {
-                                if (Items[i].Name != Sulfuras)
+                                if (Items[i].Name != SulfurasName)
                                 {
                                     Items[i].Quality = Items[i].Quality - 1;
                                 }
